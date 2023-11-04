@@ -1,0 +1,35 @@
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: #222222;
+  --text-color-dark: #ffffff;
+}
+
+
+.homepage-container {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  padding: 8px;
+}
+.screencontrol-container {
+  min-width: 50px;
+  height: 100%;
+}
+.home-main-container {
+  width: calc(100% - 50px);
+  height: 100%;
+
+}
+
+@media screen and (min-width: 1024px) {
+  .home-main-container {
+    width: calc(100% - 200px);
+  }
+  .screencontrol-container {
+    min-width: 200px;
+  }
+
+}
