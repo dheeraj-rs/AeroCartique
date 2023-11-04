@@ -10,6 +10,8 @@ import {
   ContactPhone,
   Settings,
   Favorite,
+  ArrowBack,
+  ArrowForward,
 } from "@mui/icons-material";
 import "./styles/UserNavbar.css";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +20,7 @@ function UserNavbar() {
   const navigate = useNavigate();
   return (
     <section className="navbar-container">
+      <div className="nav-controller"><ArrowBack onClick={()=>navigate(-1)}/><ArrowForward onClick={()=>navigate(+1)}/></div>
       <main className="nav-list">
         <h1>AeroCartique.</h1>
         <div onClick={() => navigate("/")}>

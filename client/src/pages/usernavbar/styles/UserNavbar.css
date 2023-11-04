@@ -4,6 +4,13 @@
   padding-inline: 10px;
 }
 
+.nav-controller{
+  display: flex;
+  justify-content: end;
+  padding: 3px;
+  gap: 10px;
+}
+
 .nav-list {
   height: 100%;
   display: flex;
