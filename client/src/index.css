@@ -8,3 +8,17 @@
   box-sizing: border-box;
   font-family: AverageSans;
 }
+
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: rgba(25, 3, 69, 0.851);
+  --text-color-dark: #ffffff;
+}
+
+
+section{
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+}

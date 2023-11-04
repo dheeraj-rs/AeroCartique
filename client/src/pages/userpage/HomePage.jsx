@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import "./styles/HomePage.css";
-import UserNavbar from "../usernavbar/UserNavbar";
 import Cart from "../../screens/cart/Cart";
 import Home from "../../screens/home";
 import Login from "../../screens/Auth/Login";
@@ -11,6 +10,7 @@ import Wishlist from "../../screens/wishlist/Wishlist";
 import Delivery from "../../screens/delivery/Delivery";
 import Products from "../../screens/products/Products";
 import Categories from "../../screens/categories/Categories";
+import UserNavbar from "../usernavbar/Usernavbar";
 
 function HomePage() {
   return (

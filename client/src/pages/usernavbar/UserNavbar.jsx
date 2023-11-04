@@ -21,12 +21,24 @@ function UserNavbar() {
   return (
     <section className="navbar-container">
       <div className="nav-controller"><ArrowBack onClick={()=>navigate(-1)}/><ArrowForward onClick={()=>navigate(+1)}/></div>
-      <main className="nav-list">
-        <h1>AeroCartique.</h1>
-        <div onClick={() => navigate("/")}>
+      <h1>AeroCartique.</h1>
+
+      <div className="pinned-list">
+      <div onClick={() => navigate("/")}>
           <Home style={{ backgroundColor: "transparent" }} />
-          <a>Home</a>
+          {/* <a>Home</a> */}
         </div>
+        <div onClick={() => navigate("/cart")}>
+          <ShoppingCart style={{ backgroundColor: "transparent" }} />
+          {/* <a>Cart</a> */}
+        </div>
+        <div onClick={() => navigate("/wishlist")}>
+          <Favorite style={{ backgroundColor: "transparent" }} />
+          {/* <a>Wishlist</a> */}
+        </div>
+      </div>
+      <main className="nav-list">
+       
         <div onClick={() => navigate("/categories")}>
           <Category style={{ backgroundColor: "transparent" }} />
           <a>Categories</a>
@@ -43,14 +55,8 @@ function UserNavbar() {
           <DeliveryDining style={{ backgroundColor: "transparent" }} />
           <a>Delivery</a>
         </div>
-        <div onClick={() => navigate("/cart")}>
-          <ShoppingCart style={{ backgroundColor: "transparent" }} />
-          <a>Cart</a>
-        </div>
-        <div onClick={() => navigate("/wishlist")}>
-          <Favorite style={{ backgroundColor: "transparent" }} />
-          <a>Wishlist</a>
-        </div>
+      
+        
         <div onClick={() => navigate("/profile")}>
           <ManageAccounts style={{ backgroundColor: "transparent" }} />
           <a>Profile</a>
