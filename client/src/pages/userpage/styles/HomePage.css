@@ -1,7 +1,7 @@
 :root {
   --bg-color-light: #ffffff;
   --text-color-light: #000000;
-  --bg-color-dark: #222222;
+  --bg-color-dark: #0a4402d9;
   --text-color-dark: #ffffff;
 }
 
@@ -24,7 +24,7 @@
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .home-main-container {
     width: calc(100% - 200px);
   }
