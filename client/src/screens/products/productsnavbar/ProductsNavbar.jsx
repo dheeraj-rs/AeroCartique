@@ -11,7 +11,7 @@ const ProductsNavbar = () => {
             <input
               type="text"
               placeholder="Search for furniture"
-              className="search-input"
+              className="product-search-input"
             />
             <button className="search-button">Search</button>
           </div>

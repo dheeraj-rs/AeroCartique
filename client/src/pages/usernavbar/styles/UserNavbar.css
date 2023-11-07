@@ -1,80 +1,126 @@
 .navbar-container {
   width: 100%;
   height: 100%;
-  padding-inline: 10px;
+  padding: 0 20px 0 10px ;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: scroll;
 }
-.navbar-container h1{
+.navbar-container h1 {
   font-size: 1.6rem;
   line-height: 20px;
 }
-.nav-controller{
+.nav-controller {
+display: flex;
+justify-content: center;
+}
+
+
+.nav-arrow{
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
-.pinned-list{
+.pinned-list {
   width: 100%;
   display: flex;
   gap: 20px;
   align-items: start;
 }
-.pinned-list div{
+.pinned-list div {
   width: max-content;
-  background-color: rgba(240, 248, 255, 0.322);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 8px;
   border-radius: 10px;
 }
-.pinned-list div:nth-child(2){
+/* .pinned-list div:nth-child(2){
   padding: 8px 30px 8px 30px ;
-}
+} */
 
 .nav-list {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
-  font-size:larger;
-  gap: 20px;
+  font-size: larger;
+  gap: 3px;
 }
 
-
-
-.nav-list div{
+.nav-list div {
   width: 100%;
   padding: 8px;
   display: flex;
   gap: 10px;
   align-items: center;
   border-radius: 10px;
+}
+
+.nav-list div:hover {
   background-color: rgba(240, 248, 255, 0.322);
 }
 
-.nav-list div a{
+.nav-list div a {
   background-color: transparent;
+  font-size:large;
+}
+
+.horizondelline {
+  width: 100%;
+  border: 0.1px solid rgba(240, 248, 255, 0.161);
+  margin: 10px 0 10px 0;
+}
+
+.search-nav {
+  color: rgba(240, 248, 255, 0.685);
+  font-weight: 100;
+}
+
+.footer-navbar {
+  background-color: rgb(48, 44, 44);
+  padding: 10px;
+  border-radius: 100%;
+}
+
+.viewSidebar{
+  transform: rotate(180deg);
+}
+
+.nav-controller span,
+.navbar-container span {
+  flex: 1;
 }
 
 
 @media screen and (max-width: 1024px) {
-
-  .navbar-container h1{
+  .navbar-container h1 {
     display: none;
   }
-  .pinned-list{
+  .pinned-list {
     flex-direction: column;
   }
-  .pinned-list div:nth-child(2){
+  /* .pinned-list div:nth-child(2){
     padding: 8px;
-  }
+  } */
 
-  .nav-list div{
+  .nav-list div {
     width: max-content;
+    background-color: rgba(240, 248, 255, 0.322);
   }
-  
-  .nav-list div a{
+  .nav-list {
+    gap: 20px;
+  }
+  .nav-list div a {
     display: none;
   }
+
+  .nav-arrow{
+    display: none;
+  }
+  .nav-controller span{
+    display: none;
+  }
+  
 }

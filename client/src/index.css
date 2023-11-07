@@ -9,16 +9,23 @@
   font-family: AverageSans;
 }
 
+::-webkit-scrollbar{
+  width: 0;
+}
+
+::selection{
+  width: 0;
+}
+
 :root {
   --bg-color-light: #ffffff;
   --text-color-light: #000000;
-  --bg-color-dark: rgba(25, 3, 69, 0.851);
-  --text-color-dark: #ffffff;
+  --bg-color-dark: rgba(3, 69, 20, 0.851);
+  --text-color-dark: rgba(255, 255, 255, 0.756);
 }
 
 
 section{
-  border-radius: 10px;
   height: 100%;
   overflow: hidden;
 }

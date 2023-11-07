@@ -1,9 +1,8 @@
+import { Search, ViewSidebar } from "@mui/icons-material";
 import {
   Home,
   ShoppingBag,
   Category,
-  DesignServices,
-  DeliveryDining,
   Logout,
   ManageAccounts,
   ShoppingCart,
@@ -18,13 +17,29 @@ import { useNavigate } from "react-router-dom";
 
 function UserNavbar() {
   const navigate = useNavigate();
+
+  const navigateToPreviousPage = () => {
+    navigate(-1);
+  };
+
+  const navigateToNextPage = () => {
+    navigate(1);
+  };
+
   return (
     <section className="navbar-container">
-      <div className="nav-controller"><ArrowBack onClick={()=>navigate(-1)}/><ArrowForward onClick={()=>navigate(+1)}/></div>
+      <div className="nav-controller">
+        <ViewSidebar className="ViewSidebar" />
+        <span></span>
+        <div className="nav-arrow">
+          <ArrowBack onClick={navigateToPreviousPage} />
+          <ArrowForward onClick={navigateToNextPage} />
+        </div>
+      </div>
       <h1>AeroCartique.</h1>
 
       <div className="pinned-list">
-      <div onClick={() => navigate("/")}>
+        <div onClick={() => navigate("/")}>
           <Home style={{ backgroundColor: "transparent" }} />
           {/* <a>Home</a> */}
         </div>
@@ -38,7 +53,6 @@ function UserNavbar() {
         </div>
       </div>
       <main className="nav-list">
-       
         <div onClick={() => navigate("/categories")}>
           <Category style={{ backgroundColor: "transparent" }} />
           <a>Categories</a>
@@ -47,16 +61,14 @@ function UserNavbar() {
           <ShoppingBag style={{ backgroundColor: "transparent" }} />
           <a>Products</a>
         </div>
-        <div onClick={() => navigate("/service")}>
+        {/* <div onClick={() => navigate("/service")}>
           <DesignServices style={{ backgroundColor: "transparent" }} />
           <a>Service</a>
         </div>
         <div onClick={() => navigate("/delivery")}>
           <DeliveryDining style={{ backgroundColor: "transparent" }} />
           <a>Delivery</a>
-        </div>
-      
-        
+        </div> */}
         <div onClick={() => navigate("/profile")}>
           <ManageAccounts style={{ backgroundColor: "transparent" }} />
           <a>Profile</a>
@@ -73,6 +85,18 @@ function UserNavbar() {
           <Logout style={{ backgroundColor: "transparent" }} />
           <a>Logout</a>
         </div>
+        <hr className="horizondelline" />
+        <div onClick={() => navigate("/searchtab")} className="search-nav">
+          <Search style={{ backgroundColor: "transparent" }} />
+          <a>Search Tab</a>
+        </div>
+        <span></span>
+        <hr className="horizondelline" />
+
+        <footer
+          className="footer-navbar"
+          onClick={() => navigate("/CustomColorSelector")}
+        ></footer>
       </main>
     </section>
   );
