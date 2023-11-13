@@ -1,44 +1,43 @@
 .navbar-container {
   width: 100%;
   height: 100%;
-  padding: 0 20px 0 10px ;
+  padding: 0 2rem 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
   overflow-y: scroll;
 }
+
 .navbar-container h1 {
   font-size: 1.6rem;
-  line-height: 20px;
+  line-height: 2rem;
 }
+
 .nav-controller {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-
-.nav-arrow{
+.nav-arrow-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .pinned-list {
   width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 2rem;
   align-items: start;
 }
+
 .pinned-list div {
   width: max-content;
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 8px;
-  border-radius: 10px;
+  padding: 0.5rem;
+  border-radius: 1rem;
 }
-/* .pinned-list div:nth-child(2){
-  padding: 8px 30px 8px 30px ;
-} */
 
 .nav-list {
   height: 100%;
@@ -46,31 +45,34 @@ justify-content: center;
   flex-direction: column;
   align-items: start;
   font-size: larger;
-  gap: 3px;
+  gap: 0.3rem;
 }
 
 .nav-list div {
   width: 100%;
-  padding: 8px;
+  padding: 0.5rem;
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
-.nav-list div:hover {
-  background-color: rgba(240, 248, 255, 0.322);
+.pinned-list div:hover,
+.nav-list div:hover,
+.footer-navbar div:hover {
+  background-color: rgba(240, 248, 255, 0.161);
+  transition: background-color 0.3s ease;
 }
 
 .nav-list div a {
   background-color: transparent;
-  font-size:large;
+  font-size: large;
 }
 
 .horizondelline {
   width: 100%;
   border: 0.1px solid rgba(240, 248, 255, 0.161);
-  margin: 10px 0 10px 0;
+  margin: 0.3125rem 0 0.625rem 0;
 }
 
 .search-nav {
@@ -79,12 +81,20 @@ justify-content: center;
 }
 
 .footer-navbar {
-  background-color: rgb(48, 44, 44);
-  padding: 10px;
-  border-radius: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1px solid rgba(240, 248, 255, 0.161);
+  padding-top: 1rem;
 }
 
-.viewSidebar{
+.customcolor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.viewSidebar {
   transform: rotate(180deg);
 }
 
@@ -93,34 +103,42 @@ justify-content: center;
   flex: 1;
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 64rem) {
   .navbar-container h1 {
     display: none;
   }
   .pinned-list {
     flex-direction: column;
   }
-  /* .pinned-list div:nth-child(2){
-    padding: 8px;
-  } */
 
-  .nav-list div {
+  .nav-list div,
+  .pinned-list div {
     width: max-content;
     background-color: rgba(240, 248, 255, 0.322);
   }
   .nav-list {
-    gap: 20px;
+    gap: 2rem;
   }
   .nav-list div a {
     display: none;
   }
 
-  .nav-arrow{
+  .nav-arrow-icon {
     display: none;
   }
-  .nav-controller span{
+  .nav-controller span {
     display: none;
   }
-  
+
+  .horizondelline {
+    display: none;
+  }
+  .footer-navbar {
+    border: none;
+  }
+  .customcolor {
+    padding: 8px;
+    border-radius: 1rem;
+    background-color: rgba(240, 248, 255, 0.322);
+  }
 }

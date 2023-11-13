@@ -1,6 +1,6 @@
 @font-face {
   font-family: AverageSans;
-  src: url(./assets/fonts/AverageSans-Regular.ttf);
+  src: url(../assets/fonts/AverageSans-Regular.ttf);
 }
 * {
   margin: 0;
@@ -16,6 +16,7 @@
 ::selection{
   width: 0;
 }
+
 
 :root {
   --bg-color-light: #ffffff;

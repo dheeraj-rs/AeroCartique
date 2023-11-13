@@ -9,7 +9,6 @@ function SearchTab() {
           <input type="text" placeholder="Search for items..." className="search-input" />
           <Search className="search-icon" />
         </div>
-        {/* <hr className="horizontal-line" /> */}
         <div className="search-out-list">
           <div className="search-item-image"></div>
           <div className="search-item-details">

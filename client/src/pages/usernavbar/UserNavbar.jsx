@@ -1,5 +1,10 @@
-import { Search, ViewSidebar } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import "./styles/UserNavbar.css";
 import {
+  ColorLens,
+  Search,
+  ViewSidebar,
   Home,
   ShoppingBag,
   Category,
@@ -12,10 +17,8 @@ import {
   ArrowBack,
   ArrowForward,
 } from "@mui/icons-material";
-import "./styles/UserNavbar.css";
-import { useNavigate } from "react-router-dom";
 
-function UserNavbar() {
+function UserNavbar({ openPopup, autoNavbar }) {
   const navigate = useNavigate();
 
   const navigateToPreviousPage = () => {
@@ -29,27 +32,23 @@ function UserNavbar() {
   return (
     <section className="navbar-container">
       <div className="nav-controller">
-        <ViewSidebar className="ViewSidebar" />
+        <ViewSidebar className="ViewSidebar" onClick={() => autoNavbar()} />
         <span></span>
-        <div className="nav-arrow">
+        <div className="nav-arrow-icon">
           <ArrowBack onClick={navigateToPreviousPage} />
           <ArrowForward onClick={navigateToNextPage} />
         </div>
       </div>
       <h1>AeroCartique.</h1>
-
       <div className="pinned-list">
         <div onClick={() => navigate("/")}>
           <Home style={{ backgroundColor: "transparent" }} />
-          {/* <a>Home</a> */}
         </div>
-        <div onClick={() => navigate("/cart")}>
+        <div onClick={() => openPopup("Cart")}>
           <ShoppingCart style={{ backgroundColor: "transparent" }} />
-          {/* <a>Cart</a> */}
         </div>
-        <div onClick={() => navigate("/wishlist")}>
+        <div onClick={() => openPopup("Wishlist")}>
           <Favorite style={{ backgroundColor: "transparent" }} />
-          {/* <a>Wishlist</a> */}
         </div>
       </div>
       <main className="nav-list">
@@ -57,27 +56,19 @@ function UserNavbar() {
           <Category style={{ backgroundColor: "transparent" }} />
           <a>Categories</a>
         </div>
-        <div onClick={() => navigate("/products")}>
-          <ShoppingBag style={{ backgroundColor: "transparent" }} />
-          <a>Products</a>
-        </div>
-        {/* <div onClick={() => navigate("/service")}>
-          <DesignServices style={{ backgroundColor: "transparent" }} />
-          <a>Service</a>
-        </div>
-        <div onClick={() => navigate("/delivery")}>
-          <DeliveryDining style={{ backgroundColor: "transparent" }} />
-          <a>Delivery</a>
-        </div> */}
-        <div onClick={() => navigate("/profile")}>
-          <ManageAccounts style={{ backgroundColor: "transparent" }} />
-          <a>Profile</a>
-        </div>
         <div onClick={() => navigate("/contact")}>
           <ContactPhone style={{ backgroundColor: "transparent" }} />
           <a>Contact</a>
         </div>
-        <div onClick={() => navigate("/setings")}>
+        <div onClick={() => navigate("/products")}>
+          <ShoppingBag style={{ backgroundColor: "transparent" }} />
+          <a>Products</a>
+        </div>
+        <div onClick={() => openPopup("profile")}>
+          <ManageAccounts style={{ backgroundColor: "transparent" }} />
+          <a>Profile</a>
+        </div>
+        <div onClick={() => openPopup("Settings")}>
           <Settings style={{ backgroundColor: "transparent" }} />
           <a>Settings</a>
         </div>
@@ -86,20 +77,23 @@ function UserNavbar() {
           <a>Logout</a>
         </div>
         <hr className="horizondelline" />
-        <div onClick={() => navigate("/searchtab")} className="search-nav">
+        <div className="search-nav" onClick={() => openPopup("searchtab")}>
           <Search style={{ backgroundColor: "transparent" }} />
           <a>Search Tab</a>
         </div>
-        <span></span>
-        <hr className="horizondelline" />
-
-        <footer
-          className="footer-navbar"
-          onClick={() => navigate("/CustomColorSelector")}
-        ></footer>
       </main>
+      <footer className="footer-navbar">
+        <div className="customcolor" onClick={() => openPopup("customcolor")}>
+          <ColorLens />
+        </div>
+      </footer>
     </section>
   );
 }
+
+UserNavbar.propTypes = {
+  openPopup: PropTypes.func.isRequired,
+  autoNavbar: PropTypes.func.isRequired,
+};
 
 export default UserNavbar;

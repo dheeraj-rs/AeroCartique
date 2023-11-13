@@ -1,9 +1,24 @@
-import "./styles/Products.css";
+import "../styles/Products.css";
 import { Link } from "react-router-dom";
-import { Favorite } from "@mui/icons-material";
-import ProductsNavbar from "./productsnavbar/Productsnavbar";
+import { Favorite, ViewColumn } from "@mui/icons-material";
+import ProductsNavbar from "../productsnavbar/Productsnavbar";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+import {useTransform, useScroll } from "framer-motion";
 
 function Products() {
+  const [isGridView, setIsGridView] = useState(true);
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+useEffect(() => {
+  console.log("🚀 ~ file: Products.jsx:18 ~ Products ~ x:", x)
+
+},[x])
+
   const active = [
     {
       title: "Product 1",
@@ -79,14 +94,21 @@ function Products() {
     },
   ];
 
+
+
   return (
-    <section className="products-container">
+    <section className="products-container" >
       <div className="products-navbar">
-        <ProductsNavbar  />
+        <ProductsNavbar />
       </div>
-      <div className="table">
+      <div className="adjesting-div">
+        <button onClick={()=>setIsGridView(!isGridView)}><ViewColumn/></button>
+      </div>
+
+      <div className={` ${isGridView ? "table" : "list-view"}`} ref={targetRef} >
+     
         {active.map((item, index) => (
-          <div className="cell" key={index}>
+          <div className="cell" key={index} >
             <div className="product-image-container">
               <Link to="/productpage">
                 <img src={item.image} alt="img" className="product-image" />
